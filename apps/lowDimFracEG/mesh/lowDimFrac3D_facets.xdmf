@@ -1,0 +1,15 @@
+<Xdmf Version="3.0">
+	<Domain>
+		<Grid Name="Grid">
+			<Geometry GeometryType="XYZ">
+				<DataItem DataType="Float" Dimensions="27031 3" Format="HDF" Precision="8">lowDimFrac3D_facets.h5:/data0</DataItem>
+			</Geometry>
+			<Topology NodesPerElement="3" NumberOfElements="305122" TopologyType="Triangle">
+				<DataItem DataType="Int" Dimensions="305122 3" Format="HDF" Precision="8">lowDimFrac3D_facets.h5:/data1</DataItem>
+			</Topology>
+			<Attribute AttributeType="Scalar" Center="Cell" Name="boundaries">
+				<DataItem DataType="UInt" Dimensions="305122" Format="HDF" Precision="8">lowDimFrac3D_facets.h5:/data2</DataItem>
+			</Attribute>
+		</Grid>
+	</Domain>
+</Xdmf>
