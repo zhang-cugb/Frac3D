@@ -1,0 +1,14 @@
+# Compiled files
+*.pyc
+
+# Sublime files
+*.sublime-workspace
+
+# Other files
+*.txt
+*.pdf
+*.ignore
+
+# Folders
+__pycache__/
+ignore/

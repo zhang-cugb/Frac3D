@@ -1,7 +1,12 @@
-# lowDimFracEG
+# Frac3D/lowDimFracEG
 
-Solution of 3D fluid flow problem in porous media with low dimensional fractures.
+Solution of 3D fluid flow problems in porous media with low dimensional fractures.
 
-<!-- <p float="left">
-	<img src="mesh/*.png" alt="mesh" height=300/>
-</p> -->
+<i>Subdomains</i>:
+<p float="left">
+	<img src="figs/Subdomains.png" alt="subdomains" height=300/>
+</p>
+<i>Boundaries</i>:
+<p float="left">
+	<img src="figs/Boundaries.png" alt="boundaries" height=300/>
+</p>
