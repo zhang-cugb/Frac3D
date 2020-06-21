@@ -1,12 +1,35 @@
 # Frac3D/LagrangeMultiplier
 
-Solution of 3D fluid flow problems in porous media with low dimensional fractures using Lagrange Multiplier.
+Solution of 3D fluid flow problems in porous media with three subdomains using Lagrange multipliers to handle the continuity of the solution across the interfaces.
 
-<i>Subdomains</i>:
+## Problem Description
+
+The problem is to find <a href="https://www.codecogs.com/eqnedit.php?latex=p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p" title="p" /></a> such that
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{align*}&space;-\nabla\cdot\left(K\nabla&space;p\right)=0,&space;&\;\text{in}\;\Omega,&space;\\&space;p=\overline{p},&space;&\;\text{in}\;\partial\Omega_p,&space;\\&space;-K\nabla&space;p\cdot&space;n=0,&space;&\;\text{in}\;\partial\Omega_u,&space;\end{align*}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{align*}&space;-\nabla\cdot\left(K\nabla&space;p\right)=0,&space;&\;\text{in}\;\Omega,&space;\\&space;p=\overline{p},&space;&\;\text{in}\;\partial\Omega_p,&space;\\&space;-K\nabla&space;p\cdot&space;n=0,&space;&\;\text{in}\;\partial\Omega_u,&space;\end{align*}" title="\begin{align*} -\nabla\cdot\left(K\nabla p\right)=0, &\;\text{in}\;\Omega, \\ p=\overline{p}, &\;\text{in}\;\partial\Omega_p, \\ -K\nabla p\cdot n=0, &\;\text{in}\;\partial\Omega_u, \end{align*}" /></a>
+
+and <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\textstyle\partial\Omega_p\cap\partial\Omega_u=\emptyset" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\textstyle\partial\Omega_p\cap\partial\Omega_u=\emptyset" title="\textstyle\partial\Omega_p\cap\partial\Omega_u=\emptyset" /></a>.
+
+Using a domain decomposition approach for <a href="https://www.codecogs.com/eqnedit.php?latex=\textstyle\Omega=\Omega_1\cup\Omega_2\cup\Omega_3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\textstyle\Omega=\Omega_1\cup\Omega_2\cup\Omega_3" title="\textstyle\Omega=\Omega_1\cup\Omega_2\cup\Omega_3" /></a>, we introduce two Lagrange multipliers to handle the continuity of the solution across the interfaces <a href="https://www.codecogs.com/eqnedit.php?latex=\textstyle\Gamma_1=\Omega_1\cap\Omega_2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\textstyle\Gamma_1=\Omega_1\cap\Omega_2" title="\textstyle\Gamma_1=\Omega_1\cap\Omega_2" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=\textstyle\Gamma_2=\Omega_2\cap\Omega_3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\textstyle\Gamma_2=\Omega_2\cap\Omega_3" title="\textstyle\Gamma_2=\Omega_2\cap\Omega_3" /></a>. The resulting weak formulation is find <a href="https://www.codecogs.com/eqnedit.php?latex=\textstyle&space;p_1\in&space;V(\Omega_1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\textstyle&space;p_1\in&space;V(\Omega_1)" title="\textstyle p_1\in V(\Omega_1)" /></a>, <a href="https://www.codecogs.com/eqnedit.php?latex=\textstyle&space;p_2\in&space;V(\Omega_2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\textstyle&space;p_2\in&space;V(\Omega_2)" title="\textstyle p_2\in V(\Omega_2)" /></a>, <a href="https://www.codecogs.com/eqnedit.php?latex=\textstyle&space;p_3\in&space;V(\Omega_3)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\textstyle&space;p_3\in&space;V(\Omega_3)" title="\textstyle p_3\in V(\Omega_3)" /></a>, <a href="https://www.codecogs.com/eqnedit.php?latex=\textstyle&space;\eta_1\in&space;E(\Gamma_1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\textstyle&space;\eta_1\in&space;E(\Gamma_1)" title="\textstyle \eta_1\in E(\Gamma_1)" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=\textstyle&space;\eta_2\in&space;E(\Gamma_2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\textstyle&space;\eta_2\in&space;E(\Gamma_2)" title="\textstyle \eta_2\in E(\Gamma_2)" /></a>, such that
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\int_{\Omega_1}K_1\nabla&space;p_1\cdot\nabla&space;v_1\;\text{d}x_1&plus;\int_{\Omega_2}K_2\nabla&space;p_2\cdot\nabla&space;v_2\;\text{d}x_2&plus;\int_{\Omega_3}K_3\nabla&space;p_3\cdot\nabla&space;v_3\;\text{d}x_3&plus;\int_{\Gamma_1}\lambda_1\left(v_1-v_2\right)\text{d}s_1&plus;\int_{\Gamma_2}\lambda_2\left(v_2-v_3\right)\text{d}s_2=0," target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int_{\Omega_1}K_1\nabla&space;p_1\cdot\nabla&space;v_1\;\text{d}x_1&plus;\int_{\Omega_2}K_2\nabla&space;p_2\cdot\nabla&space;v_2\;\text{d}x_2&plus;\int_{\Omega_3}K_3\nabla&space;p_3\cdot\nabla&space;v_3\;\text{d}x_3&plus;\int_{\Gamma_1}\lambda_1\left(v_1-v_2\right)\text{d}s_1&plus;\int_{\Gamma_2}\lambda_2\left(v_2-v_3\right)\text{d}s_2=0," title="\int_{\Omega_1}K_1\nabla p_1\cdot\nabla v_1\;\text{d}x_1+\int_{\Omega_2}K_2\nabla p_2\cdot\nabla v_2\;\text{d}x_2+\int_{\Omega_3}K_3\nabla p_3\cdot\nabla v_3\;\text{d}x_3+\int_{\Gamma_1}\lambda_1\left(v_1-v_2\right)\text{d}s_1+\int_{\Gamma_2}\lambda_2\left(v_2-v_3\right)\text{d}s_2=0," /></a>
+
+for all <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;v_1\in&space;V(\Omega_1),v_2\in&space;V(\Omega_2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;v_1\in&space;V(\Omega_1),v_2\in&space;V(\Omega_2)" title="v_1\in V(\Omega_1),v_2\in V(\Omega_2)" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;v_3\in&space;V(\Omega_3)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;v_3\in&space;V(\Omega_3)" title="v_3\in V(\Omega_3)" /></a> and
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{align*}&space;\int_{\Gamma_1}\eta_1\left(p_1-p_2\right)\text{d}s_1=0,&space;&\;\eta_1\in&space;E(\Gamma_1),\\&space;\int_{\Gamma_2}\eta_2\left(p_2-p_3\right)\text{d}s_2=0,&space;&\;\eta_2\in&space;E(\Gamma_2),&space;\end{align*}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{align*}&space;\int_{\Gamma_1}\eta_1\left(p_1-p_2\right)\text{d}s_1=0,&space;&\;\eta_1\in&space;E(\Gamma_1),\\&space;\int_{\Gamma_2}\eta_2\left(p_2-p_3\right)\text{d}s_2=0,&space;&\;\eta_2\in&space;E(\Gamma_2),&space;\end{align*}" title="\begin{align*} \int_{\Gamma_1}\eta_1\left(p_1-p_2\right)\text{d}s_1=0, &\;\eta_1\in E(\Gamma_1),\\ \int_{\Gamma_2}\eta_2\left(p_2-p_3\right)\text{d}s_2=0, &\;\eta_2\in E(\Gamma_2), \end{align*}" /></a>
+
+for all <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\eta_1\in&space;E(\Gamma_1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\eta_1\in&space;E(\Gamma_1)" title="\eta_1\in E(\Gamma_1)" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\eta_2\in&space;E(\Gamma_2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\eta_2\in&space;E(\Gamma_2)" title="\eta_2\in E(\Gamma_2)" /></a>.
+
+## Numerical Solution
+
+### Subdomains:
+
 <p float="left">
 	<img src="figs/Subdomains.png" alt="subdomains" height=300/>
 </p>
-<i>Boundaries</i>:
+
+### Boundaries:
+
 <p float="left">
 	<img src="figs/Boundaries.png" alt="boundaries" height=300/>
 </p>
