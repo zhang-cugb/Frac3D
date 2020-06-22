@@ -18,15 +18,11 @@ def DolfinReader(directory, file):
 	return msh, boundaries, subdomains
 
 
-def XDMFFieldWriter(directory, file, solution):
+def XDMFFieldWriter(directory, file, solutionList):
 	with XDMFFile("{}/{}.xdmf".format(directory, file)) as infile:
 		infile.parameters["rewrite_function_mesh"] = False
 		infile.parameters["functions_share_mesh"] = True
-		infile.write(solution, 0.0)
+		for solution in solutionList:
+			infile.write(solution, 0.0)
 		infile.close()
 	return
-
-
-def XDMFReader(directory, file):
-	with XDMFFile("{}/{}.xdmf".format(directory, file)) as infile:
-		return infile.read()

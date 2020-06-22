@@ -14,10 +14,10 @@
         <Attribute Name="p1" AttributeType="Scalar" Center="Node">
           <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution_splitted.h5:/VisualisationVector/0</DataItem>
         </Attribute>
-        <Attribute Name="p3" AttributeType="Scalar" Center="Node">
+        <Attribute Name="p2" AttributeType="Scalar" Center="Node">
           <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution_splitted.h5:/VisualisationVector/1</DataItem>
         </Attribute>
-        <Attribute Name="p2" AttributeType="Scalar" Center="Node">
+        <Attribute Name="p3" AttributeType="Scalar" Center="Node">
           <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution_splitted.h5:/VisualisationVector/2</DataItem>
         </Attribute>
       </Grid>

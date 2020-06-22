@@ -96,8 +96,6 @@ p2_h.rename("p2", "p2")
 p3_h.rename("p3", "p3")
 
 print("Writing solution to output file.")
-directory = "data"
+directory = "results"
 file = "lowDimFrac3D_solution_splitted"
-XDMFFieldWriter(directory, file, p1_h)
-XDMFFieldWriter(directory, file, p2_h)
-XDMFFieldWriter(directory, file, p3_h)
+XDMFFieldWriter(directory, file, [p1_h, p2_h, p3_h])
