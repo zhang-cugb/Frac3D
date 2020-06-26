@@ -65,9 +65,9 @@ print("Assemblying coefficients matrix A.")
 A = block_assemble(a)
 
 print("Defining independent vector blocks.")
-F1 = v1*dx1
-F2 = v2*dx2
-F3 = v3*dx3
+F1 = Constant(0.)*v1*dx1
+F2 = Constant(0.)*v2*dx2
+F3 = Constant(0.)*v3*dx3
 f = [F1,	F2,		F3,		0,		0]
 print("Assemblying independent vector F.")
 F = block_assemble(f)
@@ -99,3 +99,12 @@ print("Writing solution to output file.")
 directory = "results"
 file = "lowDimFrac3D_solution_splitted"
 XDMFFieldWriter(directory, file, [p1_h, p2_h, p3_h])
+
+print("Exporting full solution.")
+p_h = JoinSolutions([p1_h, p2_h, p3_h], subdomains, [19, 20, 18], V)
+p_h.rename("p", "p")
+
+print("Writing solution to output file.")
+directory = "results"
+file = "lowDimFrac3D_solution_full"
+XDMFFieldWriter(directory, file, [p_h])

@@ -1,5 +1,5 @@
 from dolfin import Mesh, MeshValueCollection, XDMFFile
-from dolfin.cpp.mesh import MeshFunctionSizet
+from dolfin.cpp.mesh import MeshFunctionSizet, SubsetIterator
 
 
 def DolfinReader(directory, file):
@@ -26,3 +26,16 @@ def XDMFFieldWriter(directory, file, solutionList):
 			infile.write(solution, 0.0)
 		infile.close()
 	return
+
+
+def JoinSolutions(solutionList, subdomains, subdomainsList, V):
+	dofmap = V.dofmap()
+	mesh = V.mesh()
+	joinedSolution = solutionList[1]
+	for i,ID in enumerate(subdomainsList):
+		cells = SubsetIterator(subdomains, ID)
+		for cell in cells:
+			dofs = dofmap.cell_dofs(cell.index())
+			for dof in dofs:
+				joinedSolution.vector()[dof] = solutionList[i].vector()[dof]
+	return joinedSolution
