@@ -24,12 +24,30 @@ for all <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\eta_1
 
 ### Subdomains:
 
+The domain is decomposed into three subdomains:
+- Upper subdomain <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\Omega_1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\Omega_1" title="\Omega_1" /></a> (gray color, ID 19), with <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;K_1=10^{-6}\;\text{m}^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;K_1=10^{-6}\;\text{m}^2" title="K_1=10^{-6}\;\text{m}^2" /></a>;
+- Lower subdomain <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\Omega_2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\Omega_2" title="\Omega_2" /></a> (red color, ID 20), with <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;K_2=10^{-6}\;\text{m}^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;K_2=10^{-6}\;\text{m}^2" title="K_2=10^{-6}\;\text{m}^2" /></a>;
+- Bottom subdomain <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\Omega_3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\Omega_3" title="\Omega_3" /></a> (blue color, ID 18), with <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;K_3=10^{-5}\;\text{m}^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;K_3=10^{-5}\;\text{m}^2" title="K_3=10^{-5}\;\text{m}^2" /></a>.
+
 <p float="left">
 	<img src="figs/Subdomains.png" alt="subdomains" height=300/>
 </p>
 
 ### Boundaries:
 
+The boundaries are subdivided into two Dirichlet boundaries and one Neumann boundary:
+- Dirichlet boundary <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\Gamma_1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\Gamma_1" title="\Gamma_1" /></a> (narrow band defined by <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(0\;\text{m},&space;0\;\text{m}\right)\times\left(0\;\text{m},&space;100\;\text{m}\right)\times\left(90\;\text{m},&space;100\;\text{m}\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(0\;\text{m},&space;0\;\text{m}\right)\times\left(0\;\text{m},&space;100\;\text{m}\right)\times\left(90\;\text{m},&space;100\;\text{m}\right)" title="\left(0\;\text{m}, 0\;\text{m}\right)\times\left(0\;\text{m}, 100\;\text{m}\right)\times\left(90\;\text{m}, 100\;\text{m}\right)" /></a>, ID 32), with prescribed <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;p=4\;\text{m}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;p=4\;\text{m}" title="p=4\;\text{m}" /></a>;
+- Dirichlet boundary <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\Gamma_2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\Gamma_2" title="\Gamma_2" /></a> (narrow band defined by <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(0\;\text{m},&space;100\;\text{m}\right)\times\left(0\;\text{m},&space;0\;\text{m}\right)\times\left(0\;\text{m},&space;10\;\text{m}\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(0\;\text{m},&space;100\;\text{m}\right)\times\left(0\;\text{m},&space;0\;\text{m}\right)\times\left(0\;\text{m},&space;10\;\text{m}\right)" title="\left(0\;\text{m}, 100\;\text{m}\right)\times\left(0\;\text{m}, 0\;\text{m}\right)\times\left(0\;\text{m}, 10\;\text{m}\right)" /></a>, ID 31), with prescribed <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;p=1\;\text{m}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;p=1\;\text{m}" title="p=1\;\text{m}" /></a>;
+- Neumann boundary <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\partial\Omega_u=\partial\Omega-\left(\Gamma_1\cup\Gamma_2\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\partial\Omega_u=\partial\Omega-\left(\Gamma_1\cup\Gamma_2\right)" title="\partial\Omega_u=\partial\Omega-\left(\Gamma_1\cup\Gamma_2\right)" /></a>.
+
 <p float="left">
 	<img src="figs/Boundaries.png" alt="boundaries" height=300/>
+</p>
+
+### Results:
+
+The solution is obtained using second degree Lagrange elements.
+
+<p float="left">
+	<img src="figs/Solution.png" alt="solution" height=300/>
 </p>
