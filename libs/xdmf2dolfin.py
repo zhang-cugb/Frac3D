@@ -1,5 +1,5 @@
 from dolfin import Mesh, MeshValueCollection, XDMFFile
-from dolfin.cpp.mesh import MeshFunctionSizet
+from dolfin.cpp.mesh import MeshFunctionSizet, SubsetIterator
 
 
 def DolfinReader(directory, file):
@@ -16,3 +16,13 @@ def DolfinReader(directory, file):
 		infile.read(mvc, "subdomains")
 	subdomains = MeshFunctionSizet(msh, mvc)
 	return msh, boundaries, subdomains
+
+
+def XDMFFieldWriter(directory, file, solutionList):
+	with XDMFFile("{}/{}.xdmf".format(directory, file)) as infile:
+		infile.parameters["rewrite_function_mesh"] = False
+		infile.parameters["functions_share_mesh"] = True
+		for solution in solutionList:
+			infile.write(solution, 0.0)
+		infile.close()
+	return
