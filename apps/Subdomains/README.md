@@ -10,7 +10,7 @@ The problem is to find <a href="https://www.codecogs.com/eqnedit.php?latex=p" ta
 
 and <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\textstyle\partial\Omega_p\cap\partial\Omega_u=\emptyset" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\textstyle\partial\Omega_p\cap\partial\Omega_u=\emptyset" title="\textstyle\partial\Omega_p\cap\partial\Omega_u=\emptyset" /></a>.
 
-Using a domain decomposition approach for <a href="https://www.codecogs.com/eqnedit.php?latex=\textstyle\Omega=\Omega_1\cup\Omega_2\cup\Omega_3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\textstyle\Omega=\Omega_1\cup\Omega_2\cup\Omega_3" title="\textstyle\Omega=\Omega_1\cup\Omega_2\cup\Omega_3" /></a>, the resulting weak formulation is find <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\textstyle&space;p\in&space;V(\Omega)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\textstyle&space;p\in&space;V(\Omega)" title="\textstyle p\in V(\Omega)" /></a>, such that
+The weak formulation is find <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\textstyle&space;p\in&space;V(\Omega)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\textstyle&space;p\in&space;V(\Omega)" title="\textstyle p\in V(\Omega)" /></a>, such that
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\int_{\Omega}K\nabla&space;p\cdot\nabla&space;v\;\text{d}x=0," target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int_{\Omega}K\nabla&space;p\cdot\nabla&space;v\;\text{d}x=0," title="\int_{\Omega}K\nabla p\cdot\nabla v\;\text{d}x=0," /></a>
 
