@@ -5,20 +5,20 @@
     <Grid Name="TimeSeries" GridType="Collection" CollectionType="Temporal">
       <Grid Name="mesh" GridType="Uniform">
         <Topology NumberOfElements="151331" TopologyType="Tetrahedron" NodesPerElement="4">
-          <DataItem Dimensions="151331 4" NumberType="UInt" Format="HDF">lowDimFrac3D_solution_splitted.h5:/Mesh/0/mesh/topology</DataItem>
+          <DataItem Dimensions="151331 4" NumberType="UInt" Format="HDF">lowDimFrac3D_solution.h5:/Mesh/0/mesh/topology</DataItem>
         </Topology>
         <Geometry GeometryType="XYZ">
-          <DataItem Dimensions="27031 3" Format="HDF">lowDimFrac3D_solution_splitted.h5:/Mesh/0/mesh/geometry</DataItem>
+          <DataItem Dimensions="27031 3" Format="HDF">lowDimFrac3D_solution.h5:/Mesh/0/mesh/geometry</DataItem>
         </Geometry>
         <Time Value="0" />
         <Attribute Name="p1" AttributeType="Scalar" Center="Node">
-          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution_splitted.h5:/VisualisationVector/0</DataItem>
+          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution.h5:/VisualisationVector/0</DataItem>
         </Attribute>
         <Attribute Name="p2" AttributeType="Scalar" Center="Node">
-          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution_splitted.h5:/VisualisationVector/1</DataItem>
+          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution.h5:/VisualisationVector/1</DataItem>
         </Attribute>
         <Attribute Name="p3" AttributeType="Scalar" Center="Node">
-          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution_splitted.h5:/VisualisationVector/2</DataItem>
+          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution.h5:/VisualisationVector/2</DataItem>
         </Attribute>
       </Grid>
     </Grid>

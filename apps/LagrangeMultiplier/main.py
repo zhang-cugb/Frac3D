@@ -97,14 +97,5 @@ p3_h.rename("p3", "p3")
 
 print("Writing solution to output file.")
 directory = "results"
-file = "lowDimFrac3D_solution_splitted"
+file = "lowDimFrac3D_solution"
 XDMFFieldWriter(directory, file, [p1_h, p2_h, p3_h])
-
-print("Exporting full solution.")
-p_h = JoinSolutions([p1_h, p2_h, p3_h], subdomains, [19, 20, 18], V)
-p_h.rename("p", "p")
-
-print("Writing solution to output file.")
-directory = "results"
-file = "lowDimFrac3D_solution_full"
-XDMFFieldWriter(directory, file, [p_h])
