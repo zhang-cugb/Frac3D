@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE Xdmf SYSTEM "Xdmf.dtd" []>
+<Xdmf Version="3.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <Domain>
+    <Grid Name="TimeSeries" GridType="Collection" CollectionType="Temporal">
+      <Grid Name="mesh" GridType="Uniform">
+        <Topology NumberOfElements="151331" TopologyType="Tetrahedron" NodesPerElement="4">
+          <DataItem Dimensions="151331 4" NumberType="UInt" Format="HDF">lowDimFrac3D_solution.h5:/Mesh/0/mesh/topology</DataItem>
+        </Topology>
+        <Geometry GeometryType="XYZ">
+          <DataItem Dimensions="27031 3" Format="HDF">lowDimFrac3D_solution.h5:/Mesh/0/mesh/geometry</DataItem>
+        </Geometry>
+        <Time Value="0" />
+        <Attribute Name="p31" AttributeType="Scalar" Center="Node">
+          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution.h5:/VisualisationVector/0</DataItem>
+        </Attribute>
+        <Attribute Name="p2" AttributeType="Scalar" Center="Node">
+          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution.h5:/VisualisationVector/1</DataItem>
+        </Attribute>
+        <Attribute Name="p32" AttributeType="Scalar" Center="Node">
+          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution.h5:/VisualisationVector/2</DataItem>
+        </Attribute>
+        <Attribute Name="p33" AttributeType="Scalar" Center="Node">
+          <DataItem Dimensions="27031 1" Format="HDF">lowDimFrac3D_solution.h5:/VisualisationVector/3</DataItem>
+        </Attribute>
+      </Grid>
+    </Grid>
+  </Domain>
+</Xdmf>
