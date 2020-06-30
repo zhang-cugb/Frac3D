@@ -57,19 +57,21 @@ for cell in range(len(subdomains.array())):
 kappa = Constant(20)
 
 print("Defining coefficients matrix blocks.")
-A11 = K*inner(grad(p31), grad(v31))*dx31
+A11 = K*inner(grad(p31), grad(v31))*dx31 + kappa*p31("-")*v31("-")*dS12
+A12 = -kappa*p2("+")*v31("+")*dS12
 A21 = -kappa*p31("-")*v2("-")*dS12
 A22 = K*inner(grad(p2), grad(v2))*dx2 + kappa*p2("+")*v2("+")*dS12 + kappa*p2("-")*v2("-")*dS12
 A23 = -kappa*p32("+")*v2("+")*dS12
-A33 = K*inner(grad(p32), grad(v32))*dx32
+A32 = -kappa*p2("-")*v32("-")*dS12
+A33 = K*inner(grad(p32), grad(v32))*dx32 + kappa*p32("+")*v32("+")*dS12
 A35 = l("-")*v32("-")*dS23
 A44 = K*inner(grad(p33), grad(v33))*dx33
 A45 = -l("+")*v33("+")*dS23
 A53 = m("-")*p32("-")*dS23
 A54 = -m("+")*p33("+")*dS23
-a = [[A11,	0,		0,		0,		0],
+a = [[A11,	A12,	0,		0,		0],
 	 [A21,	A22,	A23,	0,		0],
-	 [0,	0,		A33,	0,		A35],
+	 [0,	A32,	A33,	0,		A35],
 	 [0,	0,		0,		A44,	A45],
 	 [0,	0,		A53,	A54,	0]]
 print("Assemblying coefficients matrix A.")
