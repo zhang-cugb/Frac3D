@@ -58,7 +58,7 @@ The solution is obtained using second degree CG elements for the pressure field 
 	<img src="figs/Solution.png" alt="solution" height=300/>
 </p>
 
-The pressure field was plotted along the line <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(0\;\text{m},&space;100\;\text{m},&space;100\;\text{m}\right)-\left(100\;\text{m},&space;0\;\text{m},&space;0\;\text{m}\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(0\;\text{m},&space;100\;\text{m},&space;100\;\text{m}\right)-\left(100\;\text{m},&space;0\;\text{m},&space;0\;\text{m}\right)" title="\left(0\;\text{m}, 100\;\text{m}, 100\;\text{m}\right)-\left(100\;\text{m}, 0\;\text{m}, 0\;\text{m}\right)" /></a> against the arc length and compared to the benchmark solution provided by [Berre <i>et al</i> (2020)](https://arxiv.org/abs/2002.07005).
+The pressure field was plotted along the line <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(0\;\text{m},&space;100\;\text{m},&space;100\;\text{m}\right)\to\left(100\;\text{m},&space;0\;\text{m},&space;0\;\text{m}\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(0\;\text{m},&space;100\;\text{m},&space;100\;\text{m}\right)\to\left(100\;\text{m},&space;0\;\text{m},&space;0\;\text{m}\right)" title="\left(0\;\text{m}, 100\;\text{m}, 100\;\text{m}\right)\to\left(100\;\text{m}, 0\;\text{m}, 0\;\text{m}\right)" /></a> against the arc length and compared to the benchmark solution provided by [Berre <i>et al</i> (2020)](https://arxiv.org/abs/2002.07005).
 
 <p float="left">
 	<img src="figs/Benchmark.png" alt="solution" height=300/>
